@@ -42,11 +42,11 @@ var TodoForm = React.createClass({
 			<form className="todoForm">
 				<input
 					type="text"
-					className="boxy"
+					className="boxy todoInput"
 					placeholder="What needs to be done?" />
 				<input 
 					type="submit"
-					className="btn btn-primary"
+					className="btn btn-primary todoAddButton"
 					value="Add"/>
 			</form>
 		);
