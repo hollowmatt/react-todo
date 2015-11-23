@@ -8,6 +8,11 @@ var TodoApp = React.createClass({
 						<TodoForm />
 					</div>
 				</div>
+				<div className="row">
+					<div className="col-md-12">
+						<TodoList />
+					</div>
+				</div>
 			</div>
 		);	
 	}
@@ -40,6 +45,20 @@ var TodoForm = React.createClass({
 	}
 });
 
+// ToDo List
+var TodoList = React.createClass({
+	//TODO: Replace data here with Server data
+	render: function() {
+		return (
+			<div className="todoList">
+				<ul>
+					<li> Have a nap </li>
+					<li> Eat some food </li>
+				</ul>
+			</div>
+		);	
+	}
+});
 
 
 ReactDOM.render(
