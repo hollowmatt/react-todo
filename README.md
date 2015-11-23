@@ -1,0 +1,15 @@
+# React Todo
+
+This is my take on the TodoMVC [todoMVC](http://todomvc.com/examples/react/#/).
+
+## To use
+
+There is a simple server implementations included, which serves static files from `public/` and handle requests to `/api/todo` to fetch or add data. Start theserver with one the following:
+
+### Ruby
+```sh
+ruby server.rb
+```
+
+And visit <http://localhost:3000/>. Try opening multiple tabs!
+
