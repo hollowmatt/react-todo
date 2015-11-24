@@ -87,7 +87,9 @@ var TodoList = React.createClass({
 		var todos = this.props.data.map(function(item) {
 			return (
 				<li className="todoItem" key={item.id}>
-					{item.text}
+					<input className="todoCheck" type="checkbox" checked={item.completed}/>
+					<input className="todoText todoInput boxy" value={item.text}/>
+					<button className="btn btn-danger todoComplete">Delete</button>
 				</li>	
 			);
 		});

@@ -9,8 +9,13 @@ body {
 }
 
 .todoInput {
+	margin-left: 5px;
 	width: 80%;
 	box-sizing: border-box;
+}
+
+.todoComplete {
+	margin-left: 5px;
 }
 
 /* Header Style from todomvc.com */
