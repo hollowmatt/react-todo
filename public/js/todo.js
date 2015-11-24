@@ -1,5 +1,32 @@
 //ToDo App
 var TodoApp = React.createClass({
+	//get data from the api
+	loadTodos: function() {
+		$.ajax({
+			url: this.props.url,
+			dataType: 'json',
+			cache: false,
+			success: function(data) {
+				this.setState({data: data});
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)
+		});
+	},
+
+	//initial status
+	getInitialState: function() {
+		return {data:[]};
+	},
+
+	//Setup a polling frequency, to get latest data
+	componentDidMount: function() {
+		this.loadTodos();
+		setInterval(this.loadTodos, this.props.pollFrequency);
+	},
+
+	//render the app
 	render: function() {
 		return (
 			<div className="container">
@@ -12,7 +39,7 @@ var TodoApp = React.createClass({
 					</div>
 					<div className="row listRow">
 						<div className="col-md-12">
-							<TodoList />
+							<TodoList data={this.state.data} />
 						</div>
 					</div>
 					<div className="row filterRow">
@@ -57,11 +84,17 @@ var TodoForm = React.createClass({
 var TodoList = React.createClass({
 	//TODO: Replace data here with Server data
 	render: function() {
+		var todos = this.props.data.map(function(item) {
+			return (
+				<li className="todoItem" key={item.id}>
+					{item.text}
+				</li>	
+			);
+		});
 		return (
 			<div className="todoList">
 				<ul>
-					<li> Have a nap </li>
-					<li> Eat some food </li>
+					{todos}
 				</ul>
 			</div>
 		);	
@@ -84,6 +117,6 @@ var TodoFilter = React.createClass({
 
 //Render Page
 ReactDOM.render(
-	<TodoApp title="React TODO" />,
+	<TodoApp title="React TODO" url='/api/todos' pollFrequency={2000} />,
 	document.getElementById('content')
 );

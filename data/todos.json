@@ -18,5 +18,10 @@
     "id": 1448229794062,
     "text": "Deploy to server",
     "completed": false
+  },
+  {
+    "id": 1448229794063,
+    "text": "Make editable",
+    "completed": false
   }
 ]
