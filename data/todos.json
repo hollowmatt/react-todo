@@ -1,27 +1,32 @@
 [
-	{
-    "id": 1448229794059,
-    "text": "Start building the site",
-    "completed": true
-  },
-  {
-    "id": 1448229794060,
-    "text": "Get UI setup",
-    "completed": false
-  },
-  {
-    "id": 1448229794061,
-    "text": "Connect to API",
-    "completed": false
-  },
-  {
-    "id": 1448229794062,
-    "text": "Deploy to server",
-    "completed": false
-  },
-  {
-    "id": 1448229794063,
-    "text": "Make editable",
-    "completed": false
-  }
+    {
+        "id": 1448229794059,
+        "text": "Start building the site",
+        "completed": true
+    },
+    {
+        "id": 1448229794060,
+        "text": "Get UI setup",
+        "completed": true
+    },
+    {
+        "id": 1448229794061,
+        "text": "Connect to API",
+        "completed": true
+    },
+    {
+        "id": 1448463091740,
+        "text": "Save data",
+        "completed": true
+    },
+    {
+        "id": 1448229794062,
+        "text": "Deploy to server",
+        "completed": false
+    },
+    {
+        "id": 1448229794063,
+        "text": "Make editable",
+        "completed": false
+    }
 ]

@@ -15,11 +15,17 @@ server.mount_proc '/api/todos' do |req, res|
     # Assume it's well formed
     todo = { id: (Time.now.to_f * 1000).to_i }
     req.query.each do |key, value|
-      todo[key] = value.force_encoding('UTF-8')
+      if key == "completed"
+        puts value
+        value == 'true' ? todo[key] = true : todo[key] = false
+      else
+        todo[key] = value.force_encoding('UTF-8')
+      end
     end
+    puts todo
     todos << todo
     File.write(
-      './api/todos.json',
+      './data/todos.json',
       JSON.pretty_generate(todos, indent: '    '),
       encoding: 'UTF-8'
     )

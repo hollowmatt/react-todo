@@ -26,6 +26,28 @@ var TodoApp = React.createClass({
 		setInterval(this.loadTodos, this.props.pollFrequency);
 	},
 
+	handleTodoSubmit: function(todo) {
+		var todos = this.state.data;
+		todo.id = Date.now();
+		var newTodos = todos.concat([todo]);
+		this.setState({data: newTodos});
+		var saveData = {text: todo.text, completed: false};
+
+		//post the new Todo
+		$.ajax({
+			url: this.props.url,
+			dataType: 'json',
+			type: 'POST',
+			data: saveData,
+			success: function(data) {
+				this.setState({data: data});
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)
+		});
+	},
+
 	//render the app
 	render: function() {
 		return (
@@ -34,7 +56,7 @@ var TodoApp = React.createClass({
 				<div className="todoContainer">
 					<div className="row formRow">
 						<div className="col-md-12">
-							<TodoForm />
+							<TodoForm onTodoSubmit={this.handleTodoSubmit}/>
 						</div>
 					</div>
 					<div className="row listRow">
@@ -64,13 +86,33 @@ var Header = React.createClass({
 
 //ToDo Input Form
 var TodoForm = React.createClass({
+	getInitialState: function() {
+		return {text: ''};
+	},
+
+	handleTextChange: function(e) {
+		this.setState({text: e.target.value});
+	},
+
+	handleSubmit: function(e) {
+		e.preventDefault();
+		var todoText = this.state.text.trim();
+		if(!todoText) {
+			return;
+		}
+		this.props.onTodoSubmit({text: todoText, completed: false});
+		this.setState({text: ''});
+	},
+
 	render: function() {
 		return (
-			<form className="todoForm">
+			<form className="todoForm" onSubmit={this.handleSubmit}>
 				<input
 					type="text"
 					className="boxy todoInput"
-					placeholder="What needs to be done?" />
+					placeholder="What needs to be done?" 
+					value={this.state.text}
+					onChange={this.handleTextChange}/>
 				<input 
 					type="submit"
 					className="btn btn-primary todoAddButton"
@@ -88,8 +130,8 @@ var TodoList = React.createClass({
 			return (
 				<li className="todoItem" key={item.id}>
 					<input className="todoCheck" type="checkbox" checked={item.completed}/>
-					<input className="todoText todoInput boxy" value={item.text}/>
-					<button className="btn btn-danger todoComplete">Delete</button>
+          <input className="todoText todoInput boxy" value={item.text}/>
+          <button className="btn btn-danger todoComplete">Delete</button>
 				</li>	
 			);
 		});
