@@ -128,11 +128,7 @@ var TodoList = React.createClass({
 	render: function() {
 		var todos = this.props.data.map(function(item) {
 			return (
-				<li className="todoItem" key={item.id}>
-					<input className="todoCheck" type="checkbox" checked={item.completed}/>
-          <input className="todoText todoInput boxy" value={item.text}/>
-          <button className="btn btn-danger todoComplete">Delete</button>
-				</li>	
+				<TodoItem todo={item} />	
 			);
 		});
 		return (
@@ -142,6 +138,18 @@ var TodoList = React.createClass({
 				</ul>
 			</div>
 		);	
+	}
+});
+
+var TodoItem = React.createClass({
+	render: function () {
+		return (
+			<li className="todoItem" key={this.props.todo.id}>
+				<input className="todoCheck" type="checkbox" checked={this.props.todo.completed}/>
+        <input className="todoText todoInput boxy" value={this.props.todo.text}/>
+        <button className="btn btn-danger todoComplete">Delete</button>
+			</li>		
+		);
 	}
 });
 
