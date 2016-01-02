@@ -1,15 +1,17 @@
-# React Todo
+# React Todo: V2, now with Rails
 
 This is my take on the TodoMVC [todoMVC](http://todomvc.com/examples/react/#/).
 
 ## To use
 
-There is a simple server implementations included, which serves static files from `public/` and handle requests to `/api/todo` to fetch or add data. Start theserver with one the following:
+While the initial version used a simple server implementation (to serve static files from `public/` and handle requests to `/api/todo` to fetch or add data), this V2 now uses a Rails implementation for the API and data manangement. 
 
-### Ruby
+Start theserver with the following:
+
+### Rails
 ```sh
-ruby server.rb
+rails s
 ```
 
-And visit <http://localhost:3000/>. Try opening multiple tabs!
+And visit <http://localhost:3000/>. 
 
