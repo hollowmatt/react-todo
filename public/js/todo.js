@@ -23,7 +23,7 @@ var TodoApp = React.createClass({
 	//Setup a polling frequency, to get latest data
 	componentDidMount: function() {
 		this.loadTodos();
-		setInterval(this.loadTodos, this.props.pollFrequency);
+		//setInterval(this.loadTodos, this.props.pollFrequency);
 	},
 
 	handleTodoSubmit: function(todo) {
