@@ -124,11 +124,24 @@ var TodoForm = React.createClass({
 
 //ToDo List
 var TodoList = React.createClass({
-	//TODO: Replace data here with Server data
+	edit: function (todo) {
+		this.setState({editing: todo.id});
+	},
+
+	save: function (todoToSave, text) {
+		this.props.data.save(todoToSave, text);
+		this.setState({editing: null});
+	},
+
 	render: function() {
 		var todos = this.props.data.map(function(item) {
 			return (
-				<TodoItem todo={item} />	
+				<TodoItem 
+					todo={item} 
+					key={item.id}
+					onEdit={this.edit(item)}
+					onSave={this.save(item)}
+					onCancel={this.cancel}/>	
 			);
 		});
 		return (
@@ -144,7 +157,8 @@ var TodoList = React.createClass({
 var TodoItem = React.createClass({
 	render: function () {
 		return (
-			<li className="todoItem" key={this.props.todo.id}>
+			<li className="todoItem">
+				<input type="hidden" value={this.props.todo.id}/>
 				<input className="todoCheck" type="checkbox" checked={this.props.todo.completed}/>
         <input className="todoText todoInput boxy" value={this.props.todo.text}/>
         <button className="btn btn-danger todoComplete">Delete</button>
