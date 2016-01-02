@@ -1,3 +1,33 @@
-<p>
-	This is the new Todo Index page, eventually it will list all of the todos, and have react components embedded.
-</p>
+<div class="row">
+	<div class="col-md-12">
+		<p>
+			This is the new Todo Index page, eventually it will list all of the todos, and have react components embedded.
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<h3> Todos </h3>
+		<% @todos.each do |todo| %>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-2">
+					<label>Text:</label>
+				</div>
+				<div class="col-md-8">
+					<%= todo.text %> 
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-2">
+					<label>Completed</label>
+				</div>
+				<div class="col-md-8">
+					<%= todo.completed %>
+				</div>
+			</div>
+			<hr/>
+		<% end %>
+	</div>
+</div>
