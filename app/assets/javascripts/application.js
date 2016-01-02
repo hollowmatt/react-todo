@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require es6/system
 //= require jquery
 //= require jquery_ujs
 //= require jquery
@@ -18,4 +19,5 @@
 //= require react
 //= require react_ujs
 //= require flux
+//= require eventemitter
 //= require_tree .
