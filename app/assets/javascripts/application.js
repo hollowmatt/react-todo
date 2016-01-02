@@ -13,11 +13,13 @@
 //= require es6/system
 //= require jquery
 //= require jquery_ujs
-//= require jquery
 //= require bootstrap-sprockets
 //= require lodash
 //= require react
 //= require react_ujs
 //= require flux
 //= require eventemitter
+//= require components
 //= require_tree .
+
+System.import('/components/todo_section');
