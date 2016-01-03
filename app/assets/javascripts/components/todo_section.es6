@@ -1,4 +1,5 @@
 import TodoList from '/components/todo_list';
+import TodoForm from '/components/todo_form';
 
 class TodoSection extends React.Component {
 
@@ -14,7 +15,7 @@ class TodoSection extends React.Component {
 				<div className="todoContainer">
 					<div className="row formRow">
 						<div className="col-md-12">
-							<p>Todo form goes here</p>
+							<TodoForm/>
 						</div>
 					</div>
 					<div className="row listRow">
