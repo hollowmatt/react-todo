@@ -1,4 +1,11 @@
+import TodoList from '/components/todo_list';
+
 class TodoSection extends React.Component {
+
+	constructor(props) {
+		super();
+		this.state = {};
+	}
 
 	render() {
 		return (
@@ -12,7 +19,7 @@ class TodoSection extends React.Component {
 					</div>
 					<div className="row listRow">
 						<div className="col-md-12">
-							<p>Todo list goes here</p>
+							<TodoList />
 						</div>
 					</div>
 					<div className="row filterRow">
