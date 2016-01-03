@@ -1,5 +1,6 @@
 import TodoList from '/components/todo_list';
 import TodoForm from '/components/todo_form';
+import TodoFilter from '/components/todo_filter';
 
 class TodoSection extends React.Component {
 
@@ -25,7 +26,7 @@ class TodoSection extends React.Component {
 					</div>
 					<div className="row filterRow">
 						<div className="col-md-12">
-							<p>Todo filter goes here</p>
+							<TodoFilter/>
 						</div>
 					</div>
 				</div>
