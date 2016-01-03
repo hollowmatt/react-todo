@@ -1,3 +1,5 @@
+import Todo from '/components/todo';
+
 class TodoList extends React.Component {
 	
 	constructor(props) {
@@ -8,7 +10,7 @@ class TodoList extends React.Component {
 	render() {
 		return(
 			<div>
-				<p> Todo List goes here... this is the component</p>
+				<Todo/>
 			</div>
 		);
 	}	
