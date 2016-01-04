@@ -24,7 +24,7 @@ class TodoForm extends React.Component {
 				<form className="form-inline todo-form-padding todo-form-margin">
 			 		<div className="form-group">
 						<label htmlFor="todoInput">To Do</label>
-						<input id="todoInput" className="form-control todo-margin-left todo-margin-right" type="text" name="text" value={this.state.text} onChange={this.onFieldChange.bind(this)}/>
+						<input id="todoInput" className="form-control todo-margin-left todo-margin-right todo-input" type="text" name="text" value={this.state.text} onChange={this.onFieldChange.bind(this)}/>
 					</div>
 					<button className="btn btn-primary todo-button" onClick={this.submitTodo.bind(this)} type="submit">Submit</button>
 				</form>
