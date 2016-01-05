@@ -9,6 +9,8 @@ class TodoStore extends EventEmitter {
 		AppDispatcher.register((payload) => {
 			switch(payload.actionType) {
 				case Constants.ADD_TODO:
+					this.addTodo(payload.todo);
+					this.emitChange();
 					break;
 				case Constants.SET_TODOS:
 					this.setTodos(payload.todos);

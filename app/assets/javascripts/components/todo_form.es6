@@ -5,7 +5,7 @@ class TodoForm extends React.Component {
 			actions: React.PropTypes.func.isRequired
 		}
 	}
-	
+
 	constructor(props) {
 		super();
 		this.defaultState = { text:'', completed:false};
@@ -31,6 +31,7 @@ class TodoForm extends React.Component {
 			 		<div className="form-group">
 						<label htmlFor="todoInput">To Do</label>
 						<input id="todoInput" className="form-control todo-margin-left todo-margin-right todo-input" type="text" name="text" value={this.state.text} onChange={this.onFieldChange.bind(this)}/>
+						<input type="hidden" name="completed" value="false"/>
 					</div>
 					<button className="btn btn-primary todo-button" onClick={this.submitTodo.bind(this)} type="submit">Submit</button>
 				</form>

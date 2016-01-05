@@ -37,11 +37,13 @@ class TodoSection extends React.Component {
 							<TodoForm/>
 						</div>
 					</div>
+					<hr/>
 					<div className="row listRow">
 						<div className="col-md-12">
 							<TodoList />
 						</div>
 					</div>
+					<hr/>
 					<div className="row filterRow">
 						<div className="col-md-12">
 							<TodoFilter/>
