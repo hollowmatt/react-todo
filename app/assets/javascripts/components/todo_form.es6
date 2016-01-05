@@ -1,5 +1,11 @@
 class TodoForm extends React.Component {
 	
+	static get contextTypes() {
+		return {
+			actions: React.PropTypes.func.isRequired
+		}
+	}
+	
 	constructor(props) {
 		super();
 		this.defaultState = { text:'', completed:false};
@@ -14,7 +20,7 @@ class TodoForm extends React.Component {
 
 	submitTodo(event) {
 		event.preventDefault();
-		this.context.actions.addComment(this.state);
+		this.context.actions.addTodo(this.state);
 		this.setState(this.defaultState);
 	}
 

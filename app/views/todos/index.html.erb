@@ -33,6 +33,6 @@
 </div>
 <div class = "row">
 	<div class="col-md-12">
-		<%= react_component('TodoSection') %>
+		<%= react_component('TodoSection', todos: raw(render(template: 'todos/index.json.jbuilder'))) %>
 	</div>
 </div>

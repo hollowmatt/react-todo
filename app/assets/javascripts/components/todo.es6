@@ -1,17 +1,22 @@
 class Todo extends React.Component {
-	
-	constructor(props) {
-		super();
-		this.state = {};
-	}
 
+	static get propTypes() {
+		return {
+			text: React.PropTypes.string,
+			completed: React.PropTypes.bool
+		}
+	}
+	
 	render() {
-		return(
+		console.log(this.props);
+		return (
 			<div>
-				<p>Todo Component placeholder </p>
+				<div> <strong>Todo:</strong> {this.props.text}</div>
+				<div> <strong>Completed:</strong> {this.props.completed ? 'Yes' : 'No'}</div>
 			</div>
 		);
-	}	
+	}
 }
 
+window.Todo = Todo;
 export default Todo;

@@ -1,0 +1,1 @@
+json.(todo, :id, :text, :completed)
