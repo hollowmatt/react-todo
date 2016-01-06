@@ -1,0 +1,1 @@
+json.partial! @todo, partial: 'todo', as: :todo
