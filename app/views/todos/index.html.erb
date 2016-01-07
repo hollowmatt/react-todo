@@ -1,12 +1,8 @@
-<div class="row">
+<div class="row rails-box">
 	<div class="col-md-12">
-		<p>
-			This is the new Todo Index page, eventually it will list all of the todos, and have react components embedded.
-		</p>
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-12">
+		<div class="logo">
+			<%= image_tag("rails.png")%>
+		</div>
 		<h3> Todos </h3>
 		<% @todos.each do |todo| %>
 			<div class="row">
@@ -31,7 +27,7 @@
 		<% end %>
 	</div>
 </div>
-<div class = "row">
+<div class = "row react-box">
 	<div class="col-md-12">
 		<%= react_component('TodoSection', todos: raw(render(template: 'todos/index.json.jbuilder'))) %>
 	</div>
