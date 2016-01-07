@@ -32,7 +32,7 @@
   display: inline-block;
   background-color: #008CBA;
   border-color: #007095;
-  color: #FFFFFF;
+  color: #FFF;
 }
 
 .todo-input {
@@ -56,4 +56,14 @@
   border-radius: 5px;
   padding: 5px;
   background-color: #ffe5e5;
+}
+
+.react-box {
+  margin: 10px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #069;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #e5f7ff;
 }
