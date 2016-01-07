@@ -1,10 +1,7 @@
-<div>
-	<form class="form-inline todo-form-padding todo-form-margin">
- 		<div class="form-group">
-			<label htmlFor="todoInput">To Do</label>
-			<input id="todoInput" class="form-control todo-margin-left todo-margin-right todo-input" type="text" name="text" value=""/>
-			<input type="hidden" name="completed" value="false"/>
-		</div>
-		<button class="btn btn-primary todo-button" onClick="" type="submit">Submit</button>
-	</form>
-</div>
+<%= form_for :todo, url: todos_path, html: {class: "form-inline todo-form-padding todo-form-margin"} do |f| %>
+  <div class="form-group">
+    <%= f.label :text, "To Do" %>
+    <%= f.text_field :text, :class => "rails-form-control todo-margin-left todo-margin-right todo-input" %>
+  </div>
+  <%= f.submit "Submit", :class => "btn btn-primary todo-button" %>
+<% end %>
