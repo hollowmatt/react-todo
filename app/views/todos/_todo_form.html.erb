@@ -1,4 +1,4 @@
-<%= form_for :todo, url: todos_path, html: {class: "form-inline todo-form-padding todo-form-margin"} do |f| %>
+<%= form_for :todo, url: new_todo_path, html: {class: "form-inline todo-form-padding todo-form-margin"} do |f| %>
   <div class="form-group">
     <%= f.label :text, "To Do" %>
     <%= f.text_field :text, :class => "rails-form-control todo-margin-left todo-margin-right todo-input" %>

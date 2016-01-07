@@ -12,6 +12,11 @@ class TodosController < ApplicationController
 		@todo = Todo.create(todo_params)
 	end
 
+	def save
+		@todo = Todo.create(todo_params)
+		redirect_to "/"
+	end
+
 	private
 		
 		def todo_params
