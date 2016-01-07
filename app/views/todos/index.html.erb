@@ -1,34 +1,23 @@
-<div class="row rails-box">
-	<div class="col-md-12">
+<div class="row">
+	<div class="col-md-5 rails-box">
 		<div class="logo">
 			<%= image_tag("rails.png")%>
 		</div>
 		<h3> Todos </h3>
-		<% @todos.each do |todo| %>
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-2">
-					<label>Text:</label>
-				</div>
-				<div class="col-md-8">
-					<%= todo.text %> 
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-2">
-					<label>Completed</label>
-				</div>
-				<div class="col-md-8">
-					<%= todo.completed %>
-				</div>
-			</div>
-			<hr/>
-		<% end %>
+		<p>
+			This section is just a rendering of the Todo list from the Rails framework, without extra JS.
+		</p>
+		<%= render "todo_container" %>
 	</div>
-</div>
-<div class = "row react-box">
-	<div class="col-md-12">
+
+	<div class="col-md-5 react-box">
+		<div class="logo">
+			<%= image_tag("react.svg", size: "87x111")%>
+		</div>
+		<h3> Todos </h3>
+		<p>
+			This section is rendering using React.js with the Rails framework.
+		</p>
 		<%= react_component('TodoSection', todos: raw(render(template: 'todos/index.json.jbuilder'))) %>
 	</div>
 </div>

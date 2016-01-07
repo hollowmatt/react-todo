@@ -1,0 +1,6 @@
+		<% @todos.each do |todo| %>
+			<div class="todo-item">
+				<div> <strong>Todo: </strong><%= todo.text %></div>
+				<div> <strong>Completed: </strong><%= todo.completed ? 'Yes' : 'No' %></div>
+			</div>
+		<% end %>
