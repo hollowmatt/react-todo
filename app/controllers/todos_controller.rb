@@ -13,8 +13,13 @@ class TodosController < ApplicationController
 	end
 
 	def save
-		@todo = Todo.create(todo_params)
-		redirect_to "/"
+		@todo = Todo.new(todo_params)
+		if @todo.save
+			redirect_to "/"
+		else
+			@todos = Todo.all
+			render 'index'
+		end
 	end
 
 	private

@@ -1,3 +1,17 @@
+<% if @todo %>
+	<% if @todo.errors.any? %>
+		<div id="error-explanation">
+			<h2 class="error-header">
+				<%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:
+			</h2>
+			<ul class="error-list">
+				<% @todo.errors.full_messages.each do |msg| %>
+					<li class="error-item"> <%= msg %> </li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+<% end %>
 <%= form_for :todo, url: new_todo_path, html: {class: "form-inline todo-form-padding todo-form-margin"} do |f| %>
   <div class="form-group">
     <%= f.label :text, "To Do" %>

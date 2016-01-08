@@ -78,3 +78,18 @@
   background-image: none;
   border: 1px solid #ccc;
 }
+
+.error-header {
+  font-family: arial;
+  font-size: 14pt;
+  color: red;
+}
+
+.error-list {
+  list-style-type: none;
+}
+ 
+.error-item {
+  font-weight: bold;
+  color: red;
+}
