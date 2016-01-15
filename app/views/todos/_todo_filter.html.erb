@@ -1,3 +1,9 @@
-<div>
-	<p>This is the Todo Filter placeholder component </p>
-</div>
+<%= form_for :todo, url: filter_path, method: 'GET', html: {class: "form-inline todo-form-padding todo-form-margin"} do |f| %>
+  <div class="form-group">
+    <%= radio_button_tag(:completed, true) %>
+		<%= label_tag(:completed_true, "Show only completed") %>
+		<%= radio_button_tag(:completed, false) %>
+		<%= label_tag(:completed_false, "Show only incomplete") %>
+  </div>
+  <%= f.submit "Submit", :class => "btn btn-primary todo-button" %>
+<% end %>
