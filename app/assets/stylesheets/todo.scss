@@ -35,6 +35,20 @@
   color: #FFF;
 }
 
+.todo-button-secondary {
+  border-radius: 0;
+  border-style: solid;
+  border-width: 0;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f60;
+  border-color: #993d00;
+  color: #FFF;
+  font-size: smaller;
+}
+
 .todo-input {
 	border-radius: 0;
 }
@@ -55,7 +69,7 @@
   border-color: red;
   border-radius: 5px;
   padding: 5px;
-  background-color: #ffe5e5;
+  background-color: #fff;
 }
 
 .react-box {
@@ -65,7 +79,7 @@
   border-color: #069;
   border-radius: 5px;
   padding: 5px;
-  background-color: #e5f7ff;
+  background-color: #fff;
 }
 
 .rails-form-control {

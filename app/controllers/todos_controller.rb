@@ -2,14 +2,16 @@ class TodosController < ApplicationController
 
 	def index
 		if (params.has_key?(:completed))
-			puts("completed flag value: " + params[:completed])
-			if params[:completed] == "true"
+			case params[:completed]
+			when "true"
 				@todos = Todo.where(completed: true)
-			else
+			when "false"
 				@todos = Todo.where(completed: false)
+			else
+				@todos = Todo.all
 			end
 		else
-			@todos = Todo.all	
+			@todos = Todo.all
 		end
 	end
 
