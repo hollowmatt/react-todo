@@ -6,7 +6,10 @@ class TodoFilter extends React.Component {
 	}
 
 	onFieldChange(event) {
-		console.log(event);
+		console.log(event.target.value);
+		let prop = {};
+		prop[event.target.name] = event.target.value; 
+		this.setState(prop);
 	}
 
 	render() {
