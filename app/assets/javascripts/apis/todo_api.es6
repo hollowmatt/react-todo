@@ -1,3 +1,5 @@
+import Constants from '/constants';
+
 class TodoApi {
 
 	static token() {
@@ -15,7 +17,7 @@ class TodoApi {
 	}
 
 	static post(route, params) {
-		return this.xhr(route, params, 'post');
+		return this.xhr(route, params, Constants.POST);
 	}
 
 	// this will make it easier to add new verbs
