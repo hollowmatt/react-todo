@@ -17,3 +17,4 @@ rails s
 
 And visit <http://localhost:3000/>. 
 
+TODO: Figure out hide/show
