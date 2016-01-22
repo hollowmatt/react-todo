@@ -10,7 +10,7 @@ class Todo extends React.Component {
 	render() {
 		console.log(this.props);
 		return (
-			<div className="todo-item ">
+			<div className={this.props.completed ? 'todo-item hide' : 'todo-item'}>
 				<div> <strong>Todo:</strong> {this.props.text}</div>
 				<div> <strong>Completed:</strong> {this.props.completed ? 'Yes' : 'No'}</div>
 			</div>
